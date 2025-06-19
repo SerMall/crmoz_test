@@ -1,14 +1,11 @@
 <?php
 
-use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
-//  ................................
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
-Route::get('/zoho', function () {
-    return Inertia::render('ZohoForm');
-})->name('zoho');
-Route::get('/zohosimple', function () {
-    return Inertia::render('ZohoFormSimple');
-})->name('zohosimple');
+Route::get('{all}', function () {
+    return view('app');
+})->where('all', '.*');
